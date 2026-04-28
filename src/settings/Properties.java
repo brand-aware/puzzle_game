@@ -11,7 +11,7 @@ public class Properties {
 	String companyFrame;
 	
 	public Properties(String img){
-		imgDir = img;
+		imgDir = img + File.separator + "img";
 		background = imgDir + File.separator + "background.png";
 		company = imgDir + File.separator + "company.png";
 		logo = imgDir + File.separator + "logo.png";
