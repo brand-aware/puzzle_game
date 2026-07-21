@@ -253,7 +253,7 @@ public class Board extends UtilsBoardRoot{
 	public void setSize(int ht, int wd){
 		height = ht;
 		width = wd;
-		computer.setSize(ht, wd);
+		computer.setSize(wd, ht);
 	}
 	
 	public void redrawGameArea(){

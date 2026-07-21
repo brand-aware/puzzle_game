@@ -100,7 +100,7 @@ public class UpdateScore {
 			computer.recordScore(horizontal, vertical, horizontal.get(bottom), bottom, true, false);
 		}
 		if(vertical.get(left).getBackground() != Color.RED){
-			computer.recordScore(horizontal, vertical, horizontal.get(left), left, false, true);
+			computer.recordScore(horizontal, vertical, vertical.get(left), left, false, true);
 		}
 	}
 }
