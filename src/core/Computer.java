@@ -66,11 +66,9 @@ public class Computer extends UtilsComputerRoot{
 			ArrayList<JButton> horizontal, 
 			ArrayList<JButton> vertical, 
 			JButton selection){
-		System.out.println("GENERIC MOVE");
 		if(!initialized){
 			throw new Error("BOARD SIZE NOT SET");
 		}
-		System.out.println("STARTING: MOVE");
 		
 		int score = 0;
 		JButton button = null;
@@ -95,7 +93,6 @@ public class Computer extends UtilsComputerRoot{
 			int position, 
 			boolean hzl, 
 			boolean vtl){
-		System.out.println("updateScore: position - " + position);
 		if(hzl){
 			scoreGraph.removeInvalidMove(position, "HORIZONTAL");
 		}else{
@@ -118,7 +115,6 @@ public class Computer extends UtilsComputerRoot{
 		}else if(settings.getDifficulty().compareTo("EASY") == 0){
 			return easy(horizontal, vertical);		
 		}else if(settings.getDifficulty().compareTo("NORMAL") == 0){
-			System.out.println("STARTING CPU MOVE: NORMAL");
 			return normal(horizontal, vertical);
 		}else if(settings.getDifficulty().compareTo("HARD") == 0){
 			return hard(horizontal, vertical);

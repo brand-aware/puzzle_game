@@ -7,10 +7,6 @@ import ui.Board;
 
 public class driver {
 
-	/**	
-	 *
-	 * @param String imgDir
-	 */
 	public static void main(String[] args) {
 		String currentDir = System.getProperty("user.dir");
 		Properties properties = new Properties(currentDir);

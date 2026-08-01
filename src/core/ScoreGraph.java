@@ -23,12 +23,6 @@ public class ScoreGraph implements IScoreGraph{
 		initializeMoves();
 	}
 	
-	/*public final void init(ArrayList<JButton> hzl, ArrayList<JButton> vtl){
-		if(scoreGraph == null){
-			scoreGraph = new ScoreGraph(hzl, vtl);
-		}
-	}*/
-	
 	private final void initializeMoves(){
 		NodeList root = new NodeList(0, 0);
 		ArrayList<ScoreNode> scores = root.getAll();
@@ -56,7 +50,7 @@ public class ScoreGraph implements IScoreGraph{
 		if(duplicateScore(node)){
 			int index = index(node);
 			if(duplicateNode(node, index)){
-				System.out.println("SCORES NOT BEING REMOVED");
+				throw new Error("Moves not being removed");
 			}else{
 				NodeList list = originalMoves.get(index);
 				list.add(node);
@@ -70,7 +64,6 @@ public class ScoreGraph implements IScoreGraph{
 	}
 	
 	private final boolean duplicateScore(ScoreNode node){
-		System.out.print("duplicateScore - ");
 		for(int x = 0; x < originalMoves.size(); x++){
 			NodeList move = originalMoves.get(x);
 			int score1_1 = move.getScore1();
@@ -81,11 +74,9 @@ public class ScoreGraph implements IScoreGraph{
 			
 			if(score1_1 == score2_1 &&
 					score1_2 == score2_2){
-				System.out.println("found");
 				return true;
 			}
 		}
-		System.out.println("not found");
 		return false;
 	}
 	
@@ -109,7 +100,6 @@ public class ScoreGraph implements IScoreGraph{
 	}
 	
 	private final boolean duplicateNode(ScoreNode node, int index){
-		System.out.println("duplicateNode: " + node.getDirection() + ", " +node.getIndex() + ", " + node.getScore1() + ", " + node.getScore2() + " --- index: " + index);
 		NodeList nodeList = originalMoves.get(index);
 		ArrayList<ScoreNode> scores = nodeList.getAll();
 		int size = scores.size();
@@ -136,7 +126,6 @@ public class ScoreGraph implements IScoreGraph{
 						direction.compareTo(direction2) == 0){
 					scores.remove(y);
 					y--;
-					System.out.println("removing invalid move: " + index + ", " + direction);
 				}
 			}
 			scores.trimToSize();
@@ -162,7 +151,6 @@ public class ScoreGraph implements IScoreGraph{
 					if(button == button2){
 						scores.remove(y);
 						y--;
-						//System.out.println("score updated");
 					}
 				}
 			}
