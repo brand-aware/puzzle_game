@@ -1,33 +1,33 @@
 package settings;
 
-import java.io.File;
+import java.net.URL;
 
 public class Properties {
 	
 	String imgDir;
-	String background;
-	String logo;
-	String company;
-	String companyFrame;
+	URL background;
+	URL logo;
+	URL company;
+	URL companyFrame;
 	
 	public Properties(String img){
-		imgDir = img + File.separator + "img";
-		background = imgDir + File.separator + "background.png";
-		company = imgDir + File.separator + "company.png";
-		logo = imgDir + File.separator + "logo.png";
-		companyFrame = imgDir + File.separator + "company_iframe.png";
+		imgDir = "/img";
+		background = getClass().getResource(imgDir +"/background.png");
+		company = getClass().getResource(imgDir + "/company.png");
+		logo = getClass().getResource(imgDir + "/logo.png");
+		companyFrame = getClass().getResource(imgDir + "/company_iframe.png");
 	}
 	
-	public String getLogo(){
+	public URL getLogo(){
 		return logo;
 	}
-	public String getCompany(){
+	public URL getCompany(){
 		return company;
 	}
-	public String getBackground(){
+	public URL getBackground(){
 		return background;
 	}
-	public String getCompanyFrame(){
+	public URL getCompanyFrame(){
 		return companyFrame;
 	}
 
